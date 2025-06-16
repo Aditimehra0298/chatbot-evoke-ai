@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evoke AI - Transform Your Business with AI Chatbots | DamnArt</title>
+    <meta name="description" content="Revolutionize customer engagement with DamnArt AI's intelligent chatbot solutions. Automate support, boost sales, and provide 24/7 assistance across all industries.">
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      @keyframes slideInLeft {
+        0% { transform: translateX(-100px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+      }
+
+      @keyframes slideInRight {
+        0% { transform: translateX(100px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      @keyframes bounce {
+        0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+        40%, 43% { transform: translateY(-30px); }
+        70% { transform: translateY(-15px); }
+        90% { transform: translateY(-4px); }
+      }
+
+      @keyframes fadeInUp {
+        0% { transform: translateY(30px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+
+      @keyframes scaleIn {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+
+      @keyframes shimmer {
+        0% { background-position: -200px 0; }
+        100% { background-position: calc(200px + 100%) 0; }
+      }
+
+      @keyframes blueFlow {
+        0% { transform: translateX(-100%) translateY(0px); }
+        50% { transform: translateX(50%) translateY(-20px); }
+        100% { transform: translateX(100%) translateY(0px); }
+      }
+
+      @keyframes typing {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .animate-slide-in-left {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+
+      .animate-slide-in-right {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+
+      .animate-pulse-custom {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      .animate-bounce-custom {
+        animation: bounce 2s infinite;
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      .animate-scale-in {
+        animation: scaleIn 0.5s ease-out forwards;
+      }
+
+      .animate-shimmer {
+        background: linear-gradient(90deg, #1e40af 25%, #3b82f6 50%, #1e40af 75%);
+        background-size: 200px 100%;
+        animation: shimmer 2s infinite;
+      }
+
+      .animate-blue-flow {
+        animation: blueFlow 8s ease-in-out infinite;
+      }
+
+      .animate-typing {
+        animation: typing 1.5s ease-in-out infinite;
+      }
+
+      .logo-hover-effect {
+        transition: all 0.3s ease;
+        filter: grayscale(100%);
+      }
+
+      .logo-hover-effect:hover {
+        filter: grayscale(0%);
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .client-card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .client-card-hover:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 25px 50px rgba(30, 64, 175, 0.15);
+      }
+
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .floating-animation:nth-child(2n) {
+        animation-delay: -2s;
+      }
+
+      .floating-animation:nth-child(3n) {
+        animation-delay: -4s;
+      }
+
+      .blue-gradient {
+        background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 25%, #60A5FA 50%, #93C5FD 75%, #DBEAFE 100%);
+      }
+
+      .blue-text-gradient {
+        background: linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .blue-glow {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      }
+
+      .blue-glow:hover {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+      }
+
+      .chat-message-user {
+        background: linear-gradient(135deg, #3B82F6, #1E40AF);
+        color: white;
+        margin-left: 20%;
+        border-radius: 18px 18px 4px 18px;
+      }
+
+      .chat-message-bot {
+        background: linear-gradient(135deg, #F8FAFC, #E2E8F0);
+        color: #1E293B;
+        margin-right: 20%;
+        border-radius: 18px 18px 18px 4px;
+        border: 1px solid #E2E8F0;
+      }
+
+      .modal-backdrop {
+        background-color: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(8px);
+      }
+
+      .form-message {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        font-weight: 500;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .form-message.success {
+        background-color: #dcfce7;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+      }
+
+      .form-message.error {
+        background-color: #fef2f2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+      }
+
+      .form-message.hidden {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      /* Botpress Chat Widget Styles */
+      #webchat .bpWebchat {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 400px;
+        height: 600px;
+        max-height: 80vh;
+        max-width: 90vw;
+        border-radius: 16px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        z-index: 1000;
+      }
+
+      #webchat .bpFab {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50% !important;
+        background: linear-gradient(135deg, #1E40AF, #3B82F5, #60A5FA, #FFFFFF) !important;
+        box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3) !important;
+        border: none !important;
+        z-index: 1001 !important;
+        transition: all 0.3s ease !important;
+      }
+
+      #webchat .bpFab:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 15px 35px rgba(30, 64, 175, 0.4) !important;
+      }
+
+      #webchat .bpFab svg {
+        width: 28px !important;
+        height: 28px !important;
+        color: #1E40AF !important;
+      }
+
+      @media (max-width: 768px) {
+        #webchat .bpWebchat {
+          width: 100vw;
+          height: 100vh;
+          bottom: 0;
+          right: 0;
+          border-radius: 0;
+          max-width: 100vw;
+          max-height: 100vh;
+        }
+
+        #webchat .bpFab {
+          bottom: 20px !important;
+          right: 20px !important;
+          width: 56px !important;
+          height: 56px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="webchat"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.botpress.on("webchat:ready", () => {
+        window.botpress.open();
+      });
+      window.botpress.init({
+        "botId": "7f42cc3f-3f16-473f-a187-03cc331bf591",
+        "configuration": {
+          "website": {},
+          "email": {},
+          "phone": {},
+          "termsOfService": {},
+          "privacyPolicy": {},
+          "color": "#3B82F6",
+          "variant": "solid",
+          "themeMode": "light",
+          "fontFamily": "inter",
+          "radius": 1
+        },
+        "clientId": "8f4fae18-6d9f-4145-a882-043a7579a1e9",
+        "selector": "#webchat"
+      });
+    </script>
+  </body>
+</html>
