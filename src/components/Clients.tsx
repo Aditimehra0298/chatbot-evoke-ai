@@ -13,7 +13,7 @@ export const Clients: React.FC<ClientsProps> = ({ onRequestDemo }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-3 mb-6">
-            <img src="public/unnamed (1).png" alt="DamnArt Logo" className="w-12 h-12 object-contain animate-float" />
+            <img src="/unnamed (1).png" alt="DamnArt Logo" className="w-12 h-12 object-contain animate-float" />
             <h2 className="text-4xl font-bold text-gray-800">
               Our <span className="blue-text-gradient">Trusted Partners</span>
             </h2>
