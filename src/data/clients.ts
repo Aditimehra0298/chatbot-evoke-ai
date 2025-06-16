@@ -12,7 +12,7 @@ export interface Client {
 export const clients: Client[] = [
   {
     name: "DamnArt",
-    logo: "public/unnamed (1).png",
+    logo: "/unnamed (1).png",
     website: "https://www.damnart.com/",
     industry: "Digital Advertisement Marketing Network",
     description: "Digital Advertisement Marketing Network",
@@ -22,7 +22,7 @@ export const clients: Client[] = [
   },
   {
     name: "MedDevices",
-    logo: "/public/meddevices.png",
+    logo: "/meddevices.png",
     website: "https://www.meddevices.net/",
     industry: "Quality & Regulatory Compliance Services",
     description: "Quality & Regulatory Compliance Services",
@@ -31,7 +31,7 @@ export const clients: Client[] = [
   },
   {
     name: "EuroCert Asia",
-    logo: "/public/eurocert.png",
+    logo: "/eurocert.png",
     website: "https://www.eurocert.asia/",
     industry: "International Certification & Compliances",
     description: "International Certification & Compliance",
@@ -40,7 +40,7 @@ export const clients: Client[] = [
   },
   {
     name: "EuroTech World Canada",
-    logo: "/public/eurotech.png",
+    logo: "/eurotech.png",
     website: "https://canada.eurotechworld.net/",
     industry: "Advanced Technology & Innovation Hub",
     description: "Advanced Technology & Innovation Hub",
@@ -49,7 +49,7 @@ export const clients: Client[] = [
   },
   {
     name: "ITC India",
-    logo: "/public/itc.png",
+    logo: "/itc.png",
     website: "https://www.itcindia.org/",
     industry: "Electrical Safety Testing Laboratory",
     description: "Electrical Safety Testing Laboratory",
@@ -58,7 +58,7 @@ export const clients: Client[] = [
   },
   {
     name: "Sustainable Futures Trainings",
-    logo: "/public/sf.png",
+    logo: "/sf.png",
     website: "https://www.sftrainings.org/",
     industry: "Accredited Training Provider",
     description: "Accredited Training Provider",
