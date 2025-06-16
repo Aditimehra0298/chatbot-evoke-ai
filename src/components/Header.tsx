@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestDemo, onScrollToSection
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleNavClick('home')}>
             <img
-  src="public/Untitled design (1).png" // ✅ Replace with your actual path
+  src="/Untitled design (1).png" // ✅ Replace with your actual path
   alt="Evoke AI Logo"
   className="w-12 h-12 object-contain rounded-xl animate-float"
 />
